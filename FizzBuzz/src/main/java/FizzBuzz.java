@@ -37,16 +37,16 @@ public class FizzBuzz {
   }
 
   public boolean isFizz(int num) {
-    String numStr = Integer.toString(num);
-    if (num % specialNumA == 0 || numStr.contains(speciaCharA)) {
-      return true;
-    }
-    return false;
+    return isDivisibleOrContain(num, specialNumA, speciaCharA);
   }
 
   public boolean isBuzz(int num) {
+    return isDivisibleOrContain(num, specialNumB, speciaCharB);
+  }
+
+  private boolean isDivisibleOrContain(int num, int divisor, String subString) {
     String numStr = Integer.toString(num);
-    if (num % specialNumB == 0 || numStr.contains(speciaCharB)) {
+    if (num % divisor == 0 || numStr.contains(subString)) {
       return true;
     }
     return false;
